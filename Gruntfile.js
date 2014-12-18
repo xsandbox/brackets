@@ -72,6 +72,8 @@ module.exports = function (grunt) {
                         src: [
                             'extensibility/node/**',
                             '!extensibility/node/spec/**',
+                            '!extensibility/node/node_modules/**/test/**/*',
+                            '!extensibility/node/node_modules/**/examples/**/*',
                             'filesystem/impls/appshell/node/**',
                             '!filesystem/impls/appshell/node/spec/**'
                         ]
@@ -82,9 +84,13 @@ module.exports = function (grunt) {
                         dest: 'dist/',
                         cwd: 'src/',
                         src: [
+                            'extensions/default/*/**/*',
                             '!extensions/default/*/unittest-files/**/*',
                             '!extensions/default/*/unittests.js',
-                            'extensions/default/*/**/*',
+                            '!extensions/default/*/thirdparty/**/test/**/*',
+                            '!extensions/default/*/thirdparty/**/doc/**/*',
+                            '!extensions/default/**/node_modules/**/test/**/*',
+                            '!extensions/default/**/node_modules/**/examples/**/*',
                             'extensions/dev/*',
                             'extensions/samples/**/*',
                             'thirdparty/CodeMirror2/addon/{,*/}*',
