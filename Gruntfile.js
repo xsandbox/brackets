@@ -173,16 +173,6 @@ module.exports = function (grunt) {
             },
             html: ['dist/{,*/}*.html']
         },
-        uglify: {
-            dist: {
-                files: [{
-                    expand: true,
-                    cwd: 'dist/',
-                    src: ['nls/{,*/}*.js', 'thirdparty/CodeMirror2/**/*.js'],
-                    dest: 'dist/'
-                }]
-            }
-        },
         htmlmin: {
             dist: {
                 options: {
@@ -349,7 +339,6 @@ module.exports = function (grunt) {
         /*'uglify',*/
         'copy',
         'usemin',
-        'uglify:dist',
         'build-config'
     ]);
 
