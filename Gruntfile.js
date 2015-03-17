@@ -25,8 +25,9 @@ module.exports = function (grunt) {
     'use strict';
 
     // load dependencies
-    require('load-grunt-tasks')(grunt, {pattern: ['grunt-contrib-*', 'grunt-targethtml', 'grunt-usemin']});
+    require('load-grunt-tasks')(grunt, {pattern: ['grunt-contrib-*', 'grunt-targethtml', 'grunt-usemin', 'grunt-cleanempty']});
     grunt.loadTasks('tasks');
+    //grunt.loadNpmTasks('grunt-cleanempty');
 
     // Project configuration.
     grunt.initConfig({
@@ -113,6 +114,12 @@ module.exports = function (grunt) {
                     }
                 ]
             }
+        },
+        cleanempty: {
+            options: {
+                force: true,
+            },
+            src: ['dist/**/*'],
         },
         less: {
             dist: {
@@ -338,6 +345,7 @@ module.exports = function (grunt) {
         /*'cssmin',*/
         /*'uglify',*/
         'copy',
+        'cleanempty',
         'usemin',
         'build-config'
     ]);
